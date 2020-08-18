@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import Main from "../Components/Main";
+import HotelList from "../Components/HotelList";
 import Count from "../Components/Count";
 
 const Router = () => {
@@ -8,7 +8,7 @@ const Router = () => {
     return (
       <div>
         <Switch>
-          <Route exactly component={Main} exact path="/" />
+          <Route exactly component={HotelList} exact path="/" />
           <Route exactly component={Count} exact path="/count" />
           <Route path="/" exactly component={renderFor404Routes} />
         </Switch>

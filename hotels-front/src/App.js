@@ -6,7 +6,6 @@ import './App.css';
 function App() {
   return (
     <div className="main-content">
-      <p>hola</p>
         <div>
         <Router />
         </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
  export function loadHotels() {
-   return (dispatch) => axios.get('http://localhost:5000/api/hotels/').then((res) => {
+   return (dispatch) => axios.get('http://localhost:5000/api/hotels').then((res) => {
      dispatch(fetchHotels(res.data));
    });
  }
