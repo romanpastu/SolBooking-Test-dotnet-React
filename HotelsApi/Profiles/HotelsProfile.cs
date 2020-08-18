@@ -11,6 +11,8 @@ namespace Hotels.Profiles
         {   
             CreateMap<Hotel, HotelReadDto>();
             CreateMap<Hotel, HotelsReadDto>();
+            CreateMap<Hotel, HotelUpdateDto>();
+            CreateMap<HotelUpdateDto, Hotel>();
         }
     }
 }

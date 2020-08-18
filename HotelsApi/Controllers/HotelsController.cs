@@ -39,5 +39,29 @@ namespace Hotels.Controllers
             }
             return NotFound();
         }
+
+        //PATCH api/hotels/{id}
+        [HttpPatch("{id}")]
+        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<HotelUpdateDto> patchDoc)
+        {
+            var hotelModelFromRepo = _repository.GetHotelById(id);
+            if(hotelModelFromRepo == null){
+                return NotFound();
+            }
+
+            var hotelToPatch = _mapper.Map<HotelUpdateDto>(hotelModelFromRepo);
+
+            patchDoc.ApplyTo(hotelToPatch, ModelState);
+            if(!TryValidateModel(hotelToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(hotelToPatch, hotelModelFromRepo);
+            _repository.UpdateHotel(hotelModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
