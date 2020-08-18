@@ -29,6 +29,7 @@ namespace HotelsApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddDbContext<HotelsContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("HotelsConnection")));
 
@@ -49,6 +50,8 @@ namespace HotelsApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCorsMiddleware();
 
             app.UseHttpsRedirection();
 
