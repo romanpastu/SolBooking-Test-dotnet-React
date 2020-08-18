@@ -4,6 +4,7 @@ using Hotels.Data;
 using System.Collections.Generic;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
+using Hotels.Dtos;
 
 namespace Hotels.Controllers
 {
@@ -21,20 +22,20 @@ namespace Hotels.Controllers
 
         //GET api/hotels
         [HttpGet]
-        public ActionResult<IEnumerable<Hotel>> GetAllHotels()
+        public ActionResult<IEnumerable<HotelsReadDto>> GetAllHotels()
         {
-            var commandItems = _repository.GetAllHotels();
-            return Ok(_mapper.Map<IEnumerable<Hotel>>(commandItems));
+            var hotelItems = _repository.GetAllHotels();
+            return Ok(_mapper.Map<IEnumerable<HotelsReadDto>>(hotelItems));
         }
 
         //GET api/hotels/{id}
         [HttpGet("{id}",Name="GetHotelById")]
-        public ActionResult<Hotel> GetHotelById(int id)
+        public ActionResult<HotelReadDto> GetHotelById(int id)
         {
             var hotelItem = _repository.GetHotelById(id);
             if(hotelItem != null)
             {
-                return Ok(_mapper.Map<Hotel>(hotelItem));
+                return Ok(_mapper.Map<HotelReadDto>(hotelItem));
             }
             return NotFound();
         }
