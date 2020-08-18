@@ -20,5 +20,6 @@ namespace Hotels.Models
         public string description { get; set; }
         [Required]
         public string features { get; set; }
+        public bool featured {get; set; }
     }
 }

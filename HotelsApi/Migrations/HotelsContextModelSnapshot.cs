@@ -33,6 +33,9 @@ namespace HotelsApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("featured")
+                        .HasColumnType("bit");
+
                     b.Property<string>("features")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

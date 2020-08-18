@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelsApi.Migrations
 {
     [DbContext(typeof(HotelsContext))]
-    [Migration("20200818094838_initialMigration")]
+    [Migration("20200818100126_initialMigration")]
     partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,9 @@ namespace HotelsApi.Migrations
                     b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("featured")
+                        .HasColumnType("bit");
 
                     b.Property<string>("features")
                         .IsRequired()
