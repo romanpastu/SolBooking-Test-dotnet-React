@@ -15,6 +15,7 @@ namespace HotelsApi.Migrations
                     name = table.Column<string>(nullable: false),
                     city = table.Column<string>(nullable: false),
                     image = table.Column<string>(nullable: false),
+                    category = table.Column<string>(nullable: false),
                     description = table.Column<string>(nullable: false),
                     features = table.Column<string>(nullable: false),
                     featured = table.Column<bool>(nullable: false)

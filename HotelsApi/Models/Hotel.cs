@@ -16,6 +16,10 @@ namespace Hotels.Models
 
         [Required]
         public string image { get; set; }
+
+        [Required]
+        public string category { get; set; }
+
         [Required]
         public string description { get; set; }
         [Required]
