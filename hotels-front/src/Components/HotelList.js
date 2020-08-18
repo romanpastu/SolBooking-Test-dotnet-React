@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Redirect } from "react";
 import { connect } from "react-redux";
 import { CircularProgress } from "@material-ui/core";
 import { loadHotels } from "../redux/actions/actions.js";
@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export function HotelList(props) {
+function HotelList(props) {
   useEffect(() => {
     props.loadHotels();
   }, []);
@@ -24,8 +24,8 @@ export function HotelList(props) {
   if (props.hotels.length != undefined) {
     const data = props.hotels;
     const listItems = data.map((d) => (
-      <div className="hotel-row">
-        <Hotel name={d.name} category={d.category} image={d.image} description={d.description}/>
+      <div className="hotel-row" onClick={() => props.history.push("/hotel/"+d.name)}>
+        <Hotel name={d.name} category={d.category} image={d.image} description={d.description} />
       </div>
     ));
 
