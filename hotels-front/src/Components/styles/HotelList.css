@@ -1,0 +1,7 @@
+.hotel-list{
+    flex-direction: column;
+}
+
+.hotel-row{
+    border: 1px solid red;
+}

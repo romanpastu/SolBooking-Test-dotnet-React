@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { CircularProgress } from '@material-ui/core';
-import { loadHotels } from '../redux/actions/actions.js';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { CircularProgress } from "@material-ui/core";
+import { loadHotels } from "../redux/actions/actions.js";
+import Hotel from "../Components/Hotel"
+
+import './styles/HotelList.css'
 
 const mapStateToProps = (state) => state;
 
@@ -13,21 +16,26 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export function HotelList(props){
+export function HotelList(props) {
   useEffect(() => {
     props.loadHotels();
-  }, [])
+  }, []);
 
-  if(props.hotels.length != undefined) {
-    return <p>Loaded</p>
+  if (props.hotels.length != undefined) {
+    const data = props.hotels;
+    const listItems = data.map((d) => (
+      <div className="hotel-row">
+        <Hotel name={d.name} category={d.category} image={d.image} description={d.description}/>
+      </div>
+    ));
+
+    return <div className="hotel-list">{listItems}</div>;
   }
   return (
     <div>
-      <p >Loading...</p>
+      <p>Loading...</p>
     </div>
   );
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(HotelList);
