@@ -1,5 +1,6 @@
 const defaultState = {
-    hotels: {}
+    hotels: {},
+    hotel: {}
 }
 
 const mainReducer = (state = defaultState, action) => {
@@ -9,6 +10,12 @@ const mainReducer = (state = defaultState, action) => {
                 ...state ,
                 hotels: action.hotels,
             };
+        }
+        case 'LOAD_HOTEL' : {
+            return{
+                ...state,
+                hotel: action.hotel,
+            }
         }
         default:
             return{

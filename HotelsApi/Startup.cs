@@ -53,7 +53,7 @@ namespace HotelsApi
 
             app.UseCorsMiddleware();
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 

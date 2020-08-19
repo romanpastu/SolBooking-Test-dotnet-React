@@ -25,7 +25,7 @@ function HotelList(props) {
     const data = props.hotels;
     const listItems = data.map((d) => (
       <div className="hotel-row" onClick={() => props.history.push("/hotel/"+d.name)}>
-        <Hotel name={d.name} category={d.category} image={d.image} description={d.description} />
+        <Hotel name={d.name} category={d.category} image={"/"+d.image} description={d.description} />
       </div>
     ));
 

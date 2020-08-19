@@ -12,3 +12,18 @@ import axios from 'axios';
      hotels,
    };
  }
+
+ export function loadHotel(name) {
+   return (dispatch) => axios.get('http://localhost:5000/api/hotels/'+name).then((res) => {
+     dispatch(fetchHotel(res.data));
+   }).catch(err => {
+     dispatch(fetchHotel(404))
+   })
+ }
+
+ export function fetchHotel(hotel){
+   return{
+     type: 'LOAD_HOTEL',
+     hotel,
+   };
+ }
