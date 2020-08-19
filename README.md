@@ -1,4 +1,4 @@
-### Solbooking test , .net 3.1 web api + React (Hooks)/Redux
+### Solbooking test .net 3.1 web api/Ef + React (Hooks)/Redux
 
 # How to install
 
