@@ -9,7 +9,6 @@
 4. Net Core 3.1 SDK
 
 - Installation
- - BackEnd
  1. Using the terminal navigate to /HotelsApi
  2. Install .net entity framework tools ```dotnet tool install --global dotnet-ef```
  3. Run ```dotnet ef database update```
