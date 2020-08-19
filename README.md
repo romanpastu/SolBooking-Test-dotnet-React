@@ -11,11 +11,12 @@
 - Installation
  1. Using the terminal navigate to /HotelsApi
  2. Install .net entity framework tools ```dotnet tool install --global dotnet-ef```
- 3. Run ```dotnet ef database update```
- 4. Run ```dotnet build```
- 5. Run ```dotnet run``` . Now the server will be running at localhost:5000
- 6. Navigate to /hotels-front
- 7. Run ```npm i```
- 8. Run ```npm run build```
- 9. Serve the build with ```serve -s build```
- 10. Use the application.
+ 3. Update appsetings.json -> ConnectionStrings -> HotelsConnection to your database values, server can be updated to "localhost"
+ 4. Run ```dotnet ef database update```
+ 5. Run ```dotnet build```
+ 6. Run ```dotnet run``` . Now the server will be running at localhost:5000
+ 7. Navigate to /hotels-front
+ 8. Run ```npm i```
+ 9. Run ```npm run build```
+ 10. Serve the build with ```serve -s build```
+ 11. Use the application.
