@@ -30,9 +30,9 @@ namespace Hotels.Controllers
 
         //GET api/hotels/{id}
         [HttpGet("{name}",Name="GetHotelById")]
-        public ActionResult<HotelReadDto> GetHotelById(string name)
+        public ActionResult<HotelReadDto> GetHotelByName(string name)
         {
-            var hotelItem = _repository.GetHotelById(name);
+            var hotelItem = _repository.GetHotelByName(name);
             if(hotelItem != null)
             {
                 return Ok(_mapper.Map<HotelReadDto>(hotelItem));
@@ -44,7 +44,7 @@ namespace Hotels.Controllers
         [HttpPatch("{name}")]
         public ActionResult PartialCommandUpdate(string name, JsonPatchDocument<HotelUpdateDto> patchDoc)
         {
-            var hotelModelFromRepo = _repository.GetHotelById(name);
+            var hotelModelFromRepo = _repository.GetHotelByName(name);
             if(hotelModelFromRepo == null){
                 return NotFound();
             }

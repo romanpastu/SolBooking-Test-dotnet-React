@@ -1,0 +1,14 @@
+.list-image{
+    width:20vw;
+    height:20vh;
+    margin:1vw;
+    border-radius:10px;
+}
+.list-content-container{
+    display:flex;
+    flex-direction:row;
+}
+
+.list-container-text-container{
+    margin:1vw;
+}

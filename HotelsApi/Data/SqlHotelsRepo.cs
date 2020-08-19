@@ -19,7 +19,7 @@ namespace Hotels.Data
             return _context.Hotels.ToList();
         }
 
-        public Hotel GetHotelById(string name)
+        public Hotel GetHotelByName(string name)
         {
             return _context.Hotels.FirstOrDefault(p => p.name == name);
         }
