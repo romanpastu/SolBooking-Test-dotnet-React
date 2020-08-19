@@ -1,0 +1,24 @@
+.hotel-page-container{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:lightskyblue;
+}
+
+.hotel-page-image{
+    height:35vh;
+    width:35vw;
+}
+
+.props-container{
+    display:flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    margin:0.3vw;
+}
+
+.props-container p{
+    margin:0.3vw;
+}

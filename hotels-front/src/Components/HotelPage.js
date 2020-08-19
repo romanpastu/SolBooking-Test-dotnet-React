@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { loadHotel } from "../redux/actions/actions.js";
+import "./styles/HotelPage.css";
 var _ = require("lodash/core");
+
+
 
 const mapStateToProps = (state) => state;
 
@@ -22,13 +25,19 @@ const HotelPage = (props) => {
   }, []);
 
   if (_.isEmpty(props.hotel) == false) {
-    console.log(props.hotel)
     const d = props.hotel;
+    const imageString = `/assets/images/${d.image}.jpg`;
     return (
-      <div className="hotel-row">
-        <p>
-          {d.name} {d.city} {"/"+d.image} {d.description} {d.features}
-        </p>
+      <div className="hotel-page-container">
+        <div>
+        <img className="hotel-page-image" src={imageString} />
+        <div className="props-container">
+          <p>{d.name}</p>
+          <p>{d.city}</p>
+          <p>{d.description}</p>
+          <p>{d.features}</p>
+        </div>
+        </div>
       </div>
     );
   }
