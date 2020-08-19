@@ -7,7 +7,7 @@ namespace Hotels.Data
     {
         bool SaveChanges();
         IEnumerable<Hotel> GetAllHotels();
-        Hotel GetHotelById(int id);
+        Hotel GetHotelById(string name);
         void UpdateHotel(Hotel cmd);
     }
 }

@@ -29,10 +29,10 @@ namespace Hotels.Controllers
         }
 
         //GET api/hotels/{id}
-        [HttpGet("{id}",Name="GetHotelById")]
-        public ActionResult<HotelReadDto> GetHotelById(int id)
+        [HttpGet("{name}",Name="GetHotelById")]
+        public ActionResult<HotelReadDto> GetHotelById(string name)
         {
-            var hotelItem = _repository.GetHotelById(id);
+            var hotelItem = _repository.GetHotelById(name);
             if(hotelItem != null)
             {
                 return Ok(_mapper.Map<HotelReadDto>(hotelItem));
@@ -41,10 +41,10 @@ namespace Hotels.Controllers
         }
 
         //PATCH api/hotels/{id}
-        [HttpPatch("{id}")]
-        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<HotelUpdateDto> patchDoc)
+        [HttpPatch("{name}")]
+        public ActionResult PartialCommandUpdate(string name, JsonPatchDocument<HotelUpdateDto> patchDoc)
         {
-            var hotelModelFromRepo = _repository.GetHotelById(id);
+            var hotelModelFromRepo = _repository.GetHotelById(name);
             if(hotelModelFromRepo == null){
                 return NotFound();
             }

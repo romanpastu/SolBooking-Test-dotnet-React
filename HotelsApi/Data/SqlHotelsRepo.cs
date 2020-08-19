@@ -19,9 +19,9 @@ namespace Hotels.Data
             return _context.Hotels.ToList();
         }
 
-        public Hotel GetHotelById(int id)
+        public Hotel GetHotelById(string name)
         {
-            return _context.Hotels.FirstOrDefault(p => p.Id == id);
+            return _context.Hotels.FirstOrDefault(p => p.name == name);
         }
         public bool SaveChanges()
         {
